@@ -1,50 +1,36 @@
 $(document).ready(function(){
 
 	// for dropdown
-	var orgs =["Hindu American Foundation", "Hindu Swayamsevak Sangh", "Vishwa Hindu Parishad"];
-	var years = ["2014", "2013", "2012"];
+	//var orgs =["Hindu American Foundation", "Hindu Swayamsevak Sangh", "Vishwa Hindu Parishad"];
 
-	// 
-	_.each(orgs, function(value, index){
-		$('#select').append('<option value="'+ value+'">'+value+'</option>')
-	})
+	//console.log(orgs)
 
-	_.each(years, function(value, index){
-		$('#secondSelect').append('<option value="'+ value+'">'+value+'</option>')
-	})
+	//var years = ["2012", "2013", "2014"];
 
-	//the idea here is to make the button do something when both dropdowns are selected
+	//console.log(years)
 
-	$('#appbutton').on("click", function(){
-		var dropdownValue = $('#select'&&'#secondSelect').val();
+	
 
 
-       // now trying to loop through each option and spew out the right results.
-       //Result 1 will have the Amount
-       //Result 2 will have the Reason for expenditure
-       //have to create a variable for the corresponding array which will loop through 
-       var correspondingArray=_.each(temples, function(value, index){
-		if ( orgs == "Hindu Swayamsevak Sangh" && year = 2013){
-			return num.Amount==dropdownValue;
-				}else{
-					return num.Amount==dropdownValue;
-				} 
-	        }); 
+    $('#select')
+    .dropdown();
 
-	//var correspondingArray= _.find(temples, function(num){
-		//	return num.Amount == dropdownValue;
-		//});
+    $('#secondSelect')
+    .dropdown();
 
-	//The results appended to the respective blanks
+    $('#appbutton').on("click", function(){
+		var dropdownValue = $('#select').val();
+		
+		// result box 1: append the Amount
+		var Money = _.find(temples, function(num){
+			return num.Amount == dropdownValue;
+		});
 
-       $('#result').append(
-		correspondingArray.Amount
+		$('#result').append(
+			Money.Amount
 		);
 
-       //is a string a value? because the reason is a string
-
-		$('#result2').append(value.reason);
-
+		// result box 2: Here I want to put the reasons they're spending the money
 		
 
 
@@ -55,39 +41,32 @@ $(document).ready(function(){
 
 });
 
-
-	//_.each(temples, function(value,index){
-	//	if (orgs=='Hindu American Foundation')
-	//})
 	
-	// action on click
 
-	//$('#appbutton').on("click", function(){
+   //$('#appbutton').on("click", function(){
+	//	var dropdownValue = $('#select').val();
+
+		//if('#select'== 'Hindu American Foundation' && '#secondSelect' == 2014) {
+			//$('#result').html( "182009, 182009, 189086")
+		//}
+		
+		// result box 1: append the value of the food group
+		
+
+		// $('#appbutton').on("click", function(){
 		//var dropdownValue = $('#select').val();
-		
-		//var correspondingArray = _.find(temples, function(num){
-		//	return num.Year == dropdownValue;
+
+		// result box 2: append all items after you've sorted them
+		// make a new array by sorting other data
+		//var Money = _.find(temples, function(num){
+			//$('#result2').append(value.Reason + " ");
 		//});
-
-		//$('#result').append(
-		//correspondingArray.Organization
-		//);
-
 		
-		//var descSortedArray = _.sortBy(temples, function(num) {
-			    //return -num.Amount;
-			//}); 
 
-		//_.each(descSortedArray, function(value, index){
-		//	$('#result2').append(value.Amount + " ");
-		//});
 
-		// _.each(temples, function(value, index){
-		// 	if (TK == TK && year = year){
-			
-		// 	}
- 
-		// })
+
+	//});
+
 
 
 	//})
@@ -95,3 +74,18 @@ $(document).ready(function(){
 	
 
 //});
+
+	
+
+
+		
+
+		
+
+ 
+
+
+	
+	
+
+	
