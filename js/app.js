@@ -14,10 +14,10 @@ $(document).ready(function(){
 	
 
 
-    $('#select')
+    $('#orgSelect')
     .dropdown();
 
-    $('#secondSelect')
+    $('#yearSelect')
     .dropdown();
 
      //want the button to run after user input from each field
